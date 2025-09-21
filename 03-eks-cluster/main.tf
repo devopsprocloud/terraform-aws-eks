@@ -47,6 +47,7 @@ module "eks" {
         AmazonEKSLoad = "arn:aws:iam::aws:policy/AmazonEKSLoadBalancingPolicy"
         AmazonEFS     = "arn:aws:iam::aws:policy/service-role/AmazonEFSCSIDriverPolicy"
       }
+    }
     green = {
       ami_type       = "AL2023_x86_64_STANDARD"
       instance_types = ["m5.large"]
@@ -60,7 +61,6 @@ module "eks" {
         AmazonEKSLoad = "arn:aws:iam::aws:policy/AmazonEKSLoadBalancingPolicy"
         AmazonEFS     = "arn:aws:iam::aws:policy/service-role/AmazonEFSCSIDriverPolicy"
       }
-    }
     }
   }
 }
