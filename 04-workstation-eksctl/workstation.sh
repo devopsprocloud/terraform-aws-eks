@@ -16,7 +16,7 @@ LOGFILE="/tmp/$0-$TIMESTAMP.log"
 ARCH=amd64
 PLATFORM=$(uname -s)_$ARCH
 
-echo "script started executing at $TIMESTAMP" &>> $LOGFILE
+echo "script started executing at $TIMESTAMP" 
 
 VALIDATE(){
     if [ $1 -ne 0 ]
@@ -79,10 +79,6 @@ chmod +x ./kubectl
 mv kubectl /usr/local/bin/kubectl
 
 VALIDATE $? "Installing kubectl"
-
-eksctl version
-kubectl version
-
 
 #Installing kubens
 #====================================================================
