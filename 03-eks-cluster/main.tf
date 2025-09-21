@@ -3,7 +3,7 @@ module "eks" {
   version = "~> 21.0"
 
   name               = "${var.project}-${var.environment}"
-  kubernetes_version = "1.30"
+  kubernetes_version = "1.31"
 
   addons = {
     coredns = {}
@@ -34,20 +34,20 @@ module "eks" {
 
   # EKS Managed Node Group(s)
   eks_managed_node_groups = {
-    blue = {
-      ami_type       = "AL2023_x86_64_STANDARD"
-      instance_types = ["m5.large"]
-      min_size       = 2
-      max_size       = 10
-      desired_size   = 2
-      capacity_type  = "SPOT"
+    # blue = {
+    #   ami_type       = "AL2023_x86_64_STANDARD"
+    #   instance_types = ["m5.large"]
+    #   min_size       = 2
+    #   max_size       = 10
+    #   desired_size   = 2
+    #   capacity_type  = "SPOT"
 
-      iam_role_additional_policies = {
-        AmazonEBS     = "arn:aws:iam::aws:policy/service-role/AmazonEBSCSIDriverPolicy"
-        AmazonEKSLoad = "arn:aws:iam::aws:policy/AmazonEKSLoadBalancingPolicy"
-        AmazonEFS     = "arn:aws:iam::aws:policy/service-role/AmazonEFSCSIDriverPolicy"
-      }
-    }
+    #   iam_role_additional_policies = {
+    #     AmazonEBS     = "arn:aws:iam::aws:policy/service-role/AmazonEBSCSIDriverPolicy"
+    #     AmazonEKSLoad = "arn:aws:iam::aws:policy/AmazonEKSLoadBalancingPolicy"
+    #     AmazonEFS     = "arn:aws:iam::aws:policy/service-role/AmazonEFSCSIDriverPolicy"
+    #   }
+    # }
     green = {
       ami_type       = "AL2023_x86_64_STANDARD"
       instance_types = ["m5.large"]
