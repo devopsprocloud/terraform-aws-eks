@@ -1,5 +1,4 @@
-
-#!/bin/bash
+#!/bin/bash -xe
 
 
 ID=$(id -u)
